@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="./src/assets/images/favicon.jpg" type="image/x-icon">
+
+  <!-- fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- estilo -->
+  <link rel="stylesheet" href="./src/styles/reset.css">
+  <link rel="stylesheet" href="./src/styles/main.css">
+
+  <title>Avatar: Batalha dos Elementos</title>
+</head>
+<body>
+
+  <!-- áudio de fundo -->
+  <audio id="bgm" loop>
+    <source src="./src/assets/audios/Avatar The Last Airbender Theme  EPIC VERSION - Samuel Kim Music.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- vídeo de fundo -->
+  <div class="bg-video">
+    <video class="video" autoplay loop muted>
+      <source src="./src/assets/video/avatar-video.mp4" type="video/mp4"/>
+    </video>
+  </div>
+
+  <div class="container">
+    <!-- bloco esquerdo -->
+    <div class="container__left">
+        
+      <div class="score_box frame">
+        <span id="score_points">Win: 0 | Lose: 0</span>
+      </div>
+
+      <div class="menu_avatar">
+        <img id="card-image">
+      </div>
+
+      <div class="card_details frame">
+        <p id="card-name">Selecione</p>
+        <p id="card-type">uma carta</p>
+      </div>
+    </div>
+
+    <!-- bloco direito -->
+    <div class="container__right">
+      <div class="card-box__container">
+          
+        <!-- cartas do computador -->
+        <div class="card-box framed" id="computer-cards"></div>
+
+        <!-- campo de duelo -->
+        <div class="card-versus__container">
+          <div class="versus-top">
+            <div class="card-infield">
+              <img id="player-field-card">
+            </div>
+
+            <img id="aang", height="100px" src="./src/assets/icons/aang.png" alt="versus">
+
+            <div class="card-infield">
+              <img id="computer-field-card">
+            </div>
+          </div>
+
+          <div class="versus-bottom">
+            <button id="next-duel" class="rpgui-button" onclick="resetDuel()"></button>
+          </div>
+        </div>
+
+        <!-- cartas do jogador -->
+        <div class="card-box framed" id="player-cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/scripts/engine.js" defer></script>
+</body>
+</html>
