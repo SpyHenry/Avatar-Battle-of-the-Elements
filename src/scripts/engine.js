@@ -89,7 +89,7 @@ restartButton.addEventListener("click", () => {
     resetDuel();
 });
 
-const MAX_SCORE = 2; // condição de vitória
+const MAX_SCORE = 15; // condição de vitória
 
 async function checkVictory(){
     if(state.score.playerScore >= MAX_SCORE){
