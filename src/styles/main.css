@@ -230,6 +230,9 @@
 /* RESPONSIVIDADE 📱 */
 @media (max-width: 768px) {
 
+  .bg-video{
+  justify-content: center;
+}
   .container {
     flex-direction: column;
     height: auto;
@@ -243,6 +246,7 @@
     height: auto;
     padding: 10px;
     border-bottom: none;
+    background-color: rgba(31, 31, 31, 0.534);
   }
 
   .container__right {
@@ -310,6 +314,8 @@
     gap: 0.5rem;
     margin-bottom: 0.3rem;
   }
+
+
 
   /* Ajusta tamanho das cartas */
   #player-cards .card,
