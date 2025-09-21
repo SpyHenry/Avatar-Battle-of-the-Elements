@@ -71,6 +71,11 @@
   border-radius: 10px;
 }
 
+.card {
+    transition: transform 0.2s, border 0.2s;
+    border-radius: 4px;
+}
+
 .card_details{
   background-color: rgba(255, 255,255, 0.082);
   color: #ffffff;

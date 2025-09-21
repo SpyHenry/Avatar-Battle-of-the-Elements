@@ -83,17 +83,62 @@ async function createCardImage(IdCard, fieldSide){
     cardImage.classList.add("card");
 
     if(fieldSide === playerSides.player1){
-        cardImage.addEventListener("click", ()=>{
-            setCardsField(cardImage.getAttribute("data-id"));
-        });
+        let tappedOnce = false;
 
-        cardImage.addEventListener("mouseover", ()=>{
-            drawSelectCard(IdCard);
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+        if(isTouchDevice){
+            cardImage.addEventListener("touchend", (e) => {
+                e.preventDefault();
+                if(!tappedOnce){
+                    drawSelectCard(IdCard);
+                    tappedOnce = true;
+
+                    cardImage.style.border = "3px solid #5DADB3";
+                    cardImage.style.transform = "scale(1.15)";
+
+                    // reset após 1.5s se não tocar novamente
+                    setTimeout(() => {
+                        tappedOnce = false;
+                        cardImage.style.border = "";
+                        cardImage.style.transform = "";
+                    }, 1500);
+                } else {
+                    setCardsField(IdCard);
+                    tappedOnce = false;
+
+                    cardImage.style.border = "";
+                    cardImage.style.transform = "";
+                }
+            });
+        } else {
+
+            cardImage.addEventListener("mouseover", ()=> drawSelectCard(IdCard));
+            cardImage.addEventListener("click", ()=> setCardsField(IdCard));
+        }
+
+        cardImage.draggable = true;
+        cardImage.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("text/plain", IdCard);
         });
     }
 
     return cardImage;
 }
+
+state.fieldCards.player.addEventListener("dragover", (e) => e.preventDefault());
+state.fieldCards.player.addEventListener("drop", (e) => {
+    const cardId = e.dataTransfer.getData("text/plain");
+    setCardsField(cardId);
+});
+
+
+state.fieldCards.player.addEventListener("dragover", (e) => e.preventDefault());
+state.fieldCards.player.addEventListener("drop", (e) => {
+    const cardId = e.dataTransfer.getData("text/plain");
+    setCardsField(cardId);
+});
+
 
 async function setCardsField(cardId){
 
