@@ -32,7 +32,7 @@ Cada carta representa um elemento e possui condições de vitória e derrota:
   - Carta vencedora → jogador ganha 1 ponto  
   - Carta perdedora → computador ganha 1 ponto  
   - Empate → nenhum ponto
-  - Vitória: 15 pontos
+  - Vitória: 10 pontos
 
 ---
 
