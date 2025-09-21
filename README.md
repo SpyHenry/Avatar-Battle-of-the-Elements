@@ -45,4 +45,4 @@ Cada carta representa um elemento e possui condições de vitória e derrota:
 
 ---
 
-![Preview do Jogo](src/images/preview.png)
+![Preview do Jogo](src/assets/images/preview.png)
