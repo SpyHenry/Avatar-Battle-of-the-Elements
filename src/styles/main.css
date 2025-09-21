@@ -232,6 +232,52 @@
   left: 100%;
 }
 
+#restart-game {
+  display: none;
+  padding: 14px 28px;
+  background: transparent;
+  color: #5DADB3;
+  border: 2px solid #5DADB3;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+#restart-game:hover {
+  background: rgba(121, 226, 240, 0.4);
+  color: #5DADB3;
+  border-color: #5DADB3;
+  box-shadow: 0 0 15px rgba(121, 226, 240, 0.4);
+  transform: translateY(-2px);
+}
+
+#restart-game:active {
+  transform: translateY(1px);
+}
+
+#restart-game::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+#restart-game:hover::before {
+  left: 100%;
+}
+
+
 /* RESPONSIVIDADE 📱 */
 @media (max-width: 768px) {
 
@@ -342,6 +388,10 @@
     padding: 8px 18px;
     font-size: 0.85rem; 
   }
+
+    #restart-game {
+    padding: 8px 18px;
+    font-size: 0.85rem;
 }
 
 @media (max-width: 480px) {

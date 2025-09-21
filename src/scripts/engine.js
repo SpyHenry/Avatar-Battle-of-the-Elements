@@ -70,6 +70,43 @@ const cardData = [
     }
 ];
 
+const restartButton = document.getElementById("restart-game");
+
+function showRestartButton(){
+    restartButton.style.display = "block";
+}
+
+// Reinicia o jogo
+restartButton.addEventListener("click", () => {
+    
+    state.score.playerScore = 0;
+    state.score.computerScore = 0;
+    updateScore();
+
+    // esconder botão de reiniciar
+    restartButton.style.display = "none";
+
+    resetDuel();
+});
+
+const MAX_SCORE = 2; // condição de vitória
+
+async function checkVictory(){
+    if(state.score.playerScore >= MAX_SCORE){
+        alert("🎉 Você venceu o jogo!");
+        showRestartButton();
+        return true;
+    }
+
+    if(state.score.computerScore >= MAX_SCORE){
+        alert("💀 Você perdeu o jogo!");
+        showRestartButton();
+        return true;
+    }
+
+    return false;
+}
+
 async function getRandomCardId() {
     const randomIndex = Math.floor(Math.random() * cardData.length);
     return cardData[randomIndex].id;
@@ -139,7 +176,6 @@ state.fieldCards.player.addEventListener("drop", (e) => {
     setCardsField(cardId);
 });
 
-
 async function setCardsField(cardId){
 
     await removeAllCardsImages();
@@ -156,6 +192,8 @@ async function setCardsField(cardId){
 
     await updateScore();
     await drawButton(duelResults);
+
+    await checkVictory();
 
 }
 
@@ -241,6 +279,9 @@ async function resetDuel(){
 
     state.fieldCards.player.style.display = "none";
     state.fieldCards.computer.style.display = "none";
+
+    restartButton.style.display = "none";
+
 
     init();
 }
