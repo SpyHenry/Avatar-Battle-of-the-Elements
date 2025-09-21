@@ -35,7 +35,7 @@ Cada carta representa um elemento e possui condições de vitória e derrota:
 
 ---
 
-## 🎨 Funcionalidades do jogo
+## 📱 Responsivo
 
 - Detalhes da carta aparecem ao passar o mouse (desktop) ou toque único (mobile).  
 - Jogar carta com clique (desktop) ou segundo toque (mobile).  
@@ -45,5 +45,4 @@ Cada carta representa um elemento e possui condições de vitória e derrota:
 
 ---
 
-## 📂 Estrutura do projeto
-
+![Preview do Jogo](src/images/preview.png)
