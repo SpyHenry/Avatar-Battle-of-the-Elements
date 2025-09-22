@@ -177,6 +177,7 @@
 
 #player-cards {
   margin-bottom: 3rem;
+  cursor: pointer;
 }
 
 #player-field-card, #computer-field-card {
