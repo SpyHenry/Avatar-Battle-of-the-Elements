@@ -47,3 +47,6 @@ Cada carta representa um elemento e possui condições de vitória e derrota:
 ---
 
 ![Preview do Jogo](src/assets/images/preview.png)
+
+
+Desenvolvido por: Henrique Baptista Bandeira 👨🏻‍💻
